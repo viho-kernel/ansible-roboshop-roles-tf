@@ -17,5 +17,6 @@
   - boto3
   - botocore
 
-- name: setp root password
-  ansible.builtin.command: mysql_secure_installation --set-root-pass {{ MYSQL_ROOT_PASSWORD }}
+- name: set root password
+  ansible.builtin.command: >
+    mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ lookup('amazon.aws.aws_ssm', '/roboshop/{{ env }}/mysql_root_pass', region='us-east-1', decrypt=True) }}';"
