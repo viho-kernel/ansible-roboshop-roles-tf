@@ -1,0 +1,12 @@
+MONGODB_HOST: mongodb-dev.opsora.space  # submit your host
+REDIS_HOST: redis-dev.opsora.space 
+MYSQL_HOST: mysql-dev.opsora.space 
+RABBITMQ_HOST: rabbitmq-dev.opsora.space 
+CATALOGUE_HOST: catalogue.backend-dev.opsora.space
+USER_HOST: user.backend-dev.opsora.space
+CART_HOST: cart.backend-dev.opsora.space 
+SHIPPING_HOST: shipping.backend-dev.opsora.space 
+PAYMENT_HOST: payment.backend-dev.opsora.space 
+DISPATCH_HOST: dispatch.backend-dev.opsora.space
+NEXUS_URL: http://172.31.5.95:8081/repository
+group_id: "com/roboshop"

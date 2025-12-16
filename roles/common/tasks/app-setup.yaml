@@ -10,15 +10,13 @@
     system: true
     home: /app
 
-- name: "download {{ component }} code"
+- name: Download artifact from nexus
   ansible.builtin.get_url:
-    url: "https://roboshop-artifacts.s3.amazonaws.com/{{ component }}-v3.zip"
-    dest: /tmp/{{ component }}.zip
-
-# this module thinks file exist on ansible control server, needs to extract on to remote machine
-# remote_src: yes means files already exist in catalogue server
-- name: "extract {{ component }} code"
+  url: "{{NEXUS_URL}}/{{component}}/{{ group_id }}/{{component}}/{{ app_version }}/{{ component }}-{{ app_version }}.zip"
+  dest: /tmp
+  
+- name: "extract {{component}} code"
   ansible.builtin.unarchive:
-    src: "/tmp/{{ component }}.zip"
+    src: "/tmp/{{component}}-{{ app_version}}.zip"
     dest: /app
     remote_src: yes

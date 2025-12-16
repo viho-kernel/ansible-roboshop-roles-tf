@@ -1,4 +1,4 @@
 MYSQL_HOST: mysql-{{ env }}.opsora.space
 MYSQL_ROOT_USER: root
 MYSQL_ROOT_PASSWORD: RoboShop@1
-CART_HOST: cart.app-{{ env }}.opsora.space
+CART_HOST: cart.backend-{{ env }}.opsora.space
